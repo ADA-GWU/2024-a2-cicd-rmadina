@@ -13,4 +13,5 @@ jobs:
       - uses: actions/checkout@v4.1.1
       - name: Maven Project testing
         # run: mvn test
-        run: mvn spring-boot:run
+        # run: mvn spring-boot:run
+        run: mvn -B package --file pom.xml 
