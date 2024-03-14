@@ -18,7 +18,7 @@ public class SeleniumConfig {
         // Configure Chrome to run in headless mode
         // FirefoxOptions options = new FirefoxOptions();
        ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
  
         // WebDriverManager.firefoxdriver().setup();
         WebDriverManager.chromedriver().setup();
