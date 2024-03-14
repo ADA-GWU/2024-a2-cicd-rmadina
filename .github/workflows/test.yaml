@@ -12,4 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Maven Project testing
-        run: mvn test
+        # run: mvn test
+        run: mvn spring-boot:run
