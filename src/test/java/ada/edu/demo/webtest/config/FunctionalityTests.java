@@ -50,17 +50,16 @@ public class FunctionalityTests {
         assertEquals(2, students.size() );
     }
 
- 
-    @Test
-    @DisplayName("Changing new student")
-    public void testSavingChangedStudent() {
-        Student changedStudent = new Student(7956, "Madina", "Rustamova", "mr@ada.edu.az", null, null, null);
-        when(studentRepository.save(any(Student.class))).thenReturn(changedStudent);
-        Student updatedStudent = studentService.saveStudent(changedStudent);
-        assertNotNull(updatedStudent);
-        assertEquals(7956, updatedStudent.getStudentId());
-        assertEquals("Madina", updatedStudent.getFirstName());
-        assertEquals("Rustamova", updatedStudent.getLastName());
-        assertEquals("mr@ada.edu.az", updatedStudent.getEmail());
-    }
+@Test
+@DisplayName("Changing new student")
+public void testSavingChangedStudent() {
+    Student changedStudent = new Student(7956, "Madina", "Rustamova", "mr@ada.edu.az", null, null, null);
+    when(studentRepository.save(any(Student.class))).thenReturn(changedStudent);
+    Student updatedStudent = studentService.saveStudent(changedStudent);
+    assertNotNull(updatedStudent);
+    assertEquals(7956, updatedStudent.getStudentId());
+    assertEquals("Madina", updatedStudent.getFirstName());
+    assertEquals("Rustamova", updatedStudent.getLastName());
+    assertEquals("mr@ada.edu.az", updatedStudent.getEmail());
+}
 }
