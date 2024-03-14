@@ -1,4 +1,4 @@
-name: Testing
+name: Testing Automation
 
 on:
   push:
@@ -11,12 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
-      - name: Configuring JDK 20
-        uses: actions/setup-java@v4.1.0
-        with:
-          java-version: '20'
-          distribution: 'adopt'
-          cache: 'maven'
-
-      - name: Test Maven
+      - name: Test Maven Project
         run: mvn test

@@ -1,17 +1,12 @@
 package ada.edu.demo.webtest.service;
 
 
-import ada.edu.demo.webtest.entity.Course;
 import ada.edu.demo.webtest.entity.Student;
 import ada.edu.demo.webtest.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;

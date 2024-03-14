@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ class WebInterfaceTests {
 	@Autowired
 	private WebDriver webDriver;
 
-	@LocalServerPort
+    @LocalServerPort
 	private int port;
 
 	@Test
