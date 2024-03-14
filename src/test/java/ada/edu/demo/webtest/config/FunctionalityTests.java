@@ -16,6 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
 
 @ExtendWith(MockitoExtension.class)
 public class FunctionalityTests {
@@ -47,5 +48,19 @@ public class FunctionalityTests {
         List<Student> students = studentService.getStudentByEitherName("Jamal","Aliyev");
         System.out.printf("Found students: "+students.size());
         assertEquals(2, students.size() );
+    }
+
+ 
+    @Test
+    @DisplayName("Changing new student")
+    public void testSavingChangedStudent() {
+        Student changedStudent = new Student(7956, "Madina", "Rustamova", "mr@ada.edu.az", null, null, null);
+        when(studentRepository.save(any(Student.class))).thenReturn(changedStudent);
+        Student updatedStudent = studentService.saveStudent(changedStudent);
+        assertNotNull(updatedStudent);
+        assertEquals(7956, updatedStudent.getStudentId());
+        assertEquals("Madina", updatedStudent.getFirstName());
+        assertEquals("Rustamova", updatedStudent.getLastName());
+        assertEquals("mr@ada.edu.az", updatedStudent.getEmail());
     }
 }

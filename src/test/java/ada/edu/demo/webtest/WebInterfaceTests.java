@@ -10,6 +10,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -71,9 +72,9 @@ class WebInterfaceTests {
 			throw new RuntimeException(e);
 		}
 
-		// Check if the text "Jamal" is present in the page content
+		// Check if the text "Nigar" is present in the page content
 		assert(bodyElementFName.size() == 1);
 		assert(bodyElementLName.size() == 1);
 	}
-
+	
 }
