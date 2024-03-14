@@ -1,4 +1,4 @@
-name: Testing Automation
+name: Testing
 
 on:
   push:
@@ -11,5 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
-      - name: Test Maven Project
+
+      - name: Test Maven
         run: mvn test
